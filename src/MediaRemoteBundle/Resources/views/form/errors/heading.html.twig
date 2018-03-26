@@ -1,0 +1,16 @@
+{% form_theme form _self %}
+
+{% block form_errors %}
+    
+    {% if form.vars.errors.count() > 0 %}
+      <div class = "ui smaller close clo-12 red-500">
+        {% for value in form.vars.errors %}
+          <strong>{{ value.message|trans|capitalize }}</strong>
+        {% endfor %}
+
+      </div>
+
+
+    {% endif %}
+
+{% endblock %}

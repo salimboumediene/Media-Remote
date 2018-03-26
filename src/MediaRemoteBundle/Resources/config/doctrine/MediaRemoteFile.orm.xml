@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="MediaRemoteBundle\Entity\MediaRemoteFile" table="media_remote_file">
+    <indexes>
+      <index name="media _remote_id" columns="media _remote_id"/>
+    </indexes>
+    <id name="mediaRemoteFileId" type="integer" column="media_remote_file_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mediaRemoteFileTitle" type="string" column="media_remote_file_title" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="mediaRemoteFileDescr" type="string" column="media_remote_file_descr" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="mediaRemote" target-entity="MediaRemote" fetch="LAZY">
+      <join-columns>
+        <join-column name="media _remote_id" referenced-column-name="media_remote_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

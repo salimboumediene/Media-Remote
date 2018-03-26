@@ -1,0 +1,13 @@
+{
+  "name": "formation-synfony",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Salim",
+  "license": "MIT",
+  "dependencies": {
+    "material-design-lite": "latest",
+    "material-design-icons": "latest",
+    "ui-design": "latest"
+  }
+}
